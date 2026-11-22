@@ -1,0 +1,356 @@
+/* ==========================================================================
+   Fonts (self-hosted)
+   ========================================================================== */
+/* ubuntu-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/ubuntu-400.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ubuntu-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/ubuntu-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* ubuntu-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/ubuntu-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* ==========================================================================
+   Design tokens
+   ========================================================================== */
+:root {
+  color-scheme: light dark;
+
+  /* Matplotlib colors */
+  --tab-blue: #1f77b4;
+  --tab-orange: #ff7f0e;
+  --tab-red: #d62728;
+
+  --color-orcid: #a6ce39;
+
+  --font-sans: "Ubuntu", system-ui, sans-serif;
+
+  --color-bg: #ffffff;
+  --color-text: #1b1f24;
+  --color-muted: #5b6570;
+  --color-border: #d8dee4;
+  --color-accent: var(--tab-blue);
+  --color-bar: #e8eff6;
+  --color-bar-border: #cfdbe8;
+
+  --sidebar-width: 22rem;
+  --header-height: 3.25rem;
+
+  --photo-size: 14rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #14181d;
+    --color-text: #e6e8eb;
+    --color-muted: #9aa5b1;
+    --color-border: #2c333b;
+    --color-bar: #1a222b;
+    --color-bar-border: #2a3541;
+    /* Lightened tab:blue to keep sufficient contrast on dark backgrounds */
+    --color-accent: color-mix(in srgb, var(--tab-blue) 70%, white);
+  }
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+main a {
+  color: var(--color-accent);
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 1rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ==========================================================================
+   Layout: sidebar + content column
+   ========================================================================== */
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+  gap: 3.5rem;
+  width: min(100% - 2rem, 82rem);
+  margin-inline: auto;
+}
+
+.layout > main {
+  min-width: 0;
+  padding-block: 3.5rem 4rem;
+}
+
+/* ==========================================================================
+   Section titles (underlined with a rule)
+   ========================================================================== */
+.section-title {
+  margin: 0 0 1rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--tab-red);
+}
+
+/* ==========================================================================
+   Header and navigation (full-width bar)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bar);
+  border-bottom: 1px solid var(--color-bar-border);
+}
+
+.site-header__inner {
+  align-items: center;
+  min-height: var(--header-height);
+}
+
+/* Align the menu with the content column */
+.site-header nav {
+  grid-column: 2;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Middle dot delimiter; empty alt text keeps it out of screen readers */
+.nav li + li::before {
+  content: "·" / "";
+  margin-inline: 0.9rem;
+  color: var(--color-muted);
+}
+
+.nav a {
+  padding-block: 0.35rem;
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+.nav a:hover,
+.nav a:focus-visible,
+.nav a[aria-current="page"] {
+  border-bottom-color: var(--color-accent);
+}
+
+.nav a[aria-current="page"] {
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Sidebar
+   ========================================================================== */
+.sidebar {
+  position: sticky;
+  top: var(--header-height);
+  align-self: start;
+  max-height: calc(100vh - var(--header-height));
+  overflow-y: auto;
+  padding-block: 3.5rem 2rem;
+  text-align: center;
+}
+
+.sidebar__name {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.sidebar__photo {
+  display: block;
+  width: var(--photo-size);
+  height: var(--photo-size);
+  margin-inline: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+}
+
+.sidebar__role {
+  width: var(--photo-size);
+  margin: 1.25rem auto 0;
+  color: var(--color-muted);
+}
+
+.sidebar__role::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  margin-top: 1.25rem;
+  background: var(--tab-red);
+}
+
+.social {
+  display: grid;
+  gap: 0.6rem;
+  width: var(--photo-size);
+  margin: 1.25rem auto 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.social a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%; /* fixed hit area: it never changes on hover */
+  height: 1.75rem;
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+/* Bullet: mathematical "maps to" arrow (↦) */
+.social li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.social li::before {
+  content: "\21A6" / ""; /* empty alt text: hidden from screen readers */
+  flex: none;
+  width: 1.4rem;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--color-text);
+}
+
+/* Icon: fixed size, never affected by hover */
+.social a::before {
+  content: "";
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  background-color: var(--icon-color);
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+.social__label {
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Only the text is highlighted */
+.social a:hover .social__label,
+.social a:focus-visible .social__label {
+  color: var(--hover-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.social__linkedin {
+  --icon: url("/assets/icons/linkedin.svg");
+  --icon-color: var(--tab-blue);
+  --hover-color: var(--icon-color);
+}
+
+.social__github {
+  --icon: url("/assets/icons/github.svg");
+  --icon-color: var(--tab-orange);
+  --hover-color: var(--icon-color);
+}
+
+.social__orcid {
+  --icon: url("/assets/icons/orcid.svg");
+  --icon-color: var(--color-orcid);
+  --hover-color: var(--color-muted);
+}
+
+.social__orcid .orcid-id {
+  color: var(--icon-color);
+}
+
+/* ==========================================================================
+   Home: short bio
+   ========================================================================== */
+.bio p {
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive: stack sidebar above content on small screens
+   ========================================================================== */
+@media (max-width: 48rem) {
+  .sidebar {
+    --photo-size: 8rem;
+    position: static;
+    max-height: none;
+    overflow: visible;
+    padding-block: 1.5rem 1rem;
+  }
+
+  .sidebar__role,
+  .social {
+    width: auto;
+  }
+
+  .sidebar__role::after {
+    width: var(--photo-size);
+    margin-inline: auto;
+  }
+}
