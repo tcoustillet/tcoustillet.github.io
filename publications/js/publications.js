@@ -112,7 +112,6 @@ function renderCitation(pub) {
   }
   if (pub.pages) cite.append(`, ${pub.pages.replace("-", "–")}`);
   if (pub.id) cite.append(`, ${pub.id}`);
-  if (pub.id) cite.append(` ${pub.id}`);
   if (pub.year) {
     cite.append(
       pub.type === "peer-reviewed" ? ` (${pub.year})` : `, ${pub.year}`,
