@@ -18,6 +18,11 @@ const TYPES = [
     label: "Posts",
     color: "var(--tab-purple)",
   },
+  {
+    id: "poster",
+    label: "Posters",
+    color: "var(--tab-pink)",
+  },
 ];
 
 // Your name as written in the data: it is highlighted in author lists.

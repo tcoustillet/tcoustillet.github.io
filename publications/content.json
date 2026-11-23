@@ -189,5 +189,41 @@
         "icon": "aopwiki"
       }
     ]
+  },
+  {
+    "type": "poster",
+    "title": "Neuromuscular electrical stimulation of the respiratory muscles based on breathing modelization in a mouse model of cervical spinal cord injury",
+    "authors": [
+      "Coustillet, T.",
+      "Cayetanot, F.",
+      "Bodineau, L.",
+      "Vivodtzev, I."
+    ],
+    "venue": "European Respiratory Society",
+    "year": 2021,
+    "volume": 58,
+    "pages": "suppl 65",
+    "doi": "10.1183/13993003.congress-2021.PA617",
+    "publisher": "ers",
+    "pdf": "../assets/pdfs/Coustillet2021.pdf"
+  },
+  {
+    "type": "poster",
+    "title": "Rôle des polluants dans l'agressivité du cancer du sein: proposition d'une chaîne d'évènement entre l'activation du récepteur aux aryls hydrocarbones et la progression du cancer du sein",
+    "authors": [
+      "Benoit, L.",
+      "Jornod, F.",
+      "Zgheib, E.",
+      "Tomkiewicz, C.",
+      "Koual, M.",
+      "Coustillet, T.",
+      "Barouki, R.",
+      "Audouze, K.",
+      "Vinken, M.",
+      "Coumoul, X."
+    ],
+    "venue": "Société Française de Sénologie et de Pathologie Mammaire",
+    "year": 2022,
+    "pdf": "https://www.senologie.com/Doc/44d58d2d-e6b7-f6c8-2b2d-635fa2b2925c/"
   }
 ]
