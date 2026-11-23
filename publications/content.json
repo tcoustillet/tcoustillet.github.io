@@ -18,7 +18,8 @@
     "doi": "10.1016/j.tox.2025.154225",
     "volume": "517",
     "pages": "154225",
-    "pmid": "40571180"
+    "pmid": "40571180",
+    "pdf": "../assets/pdfs/Coustillet2025.pdf"
   },
   {
     "type": "peer-reviewed",
@@ -55,7 +56,8 @@
     "doi": "10.3389/ftox.2024.1285768",
     "volume": "6",
     "pages": "1285768",
-    "pmid": "38523647"
+    "pmid": "38523647",
+    "pdf": "../assets/pdfs/Jaylet2024.pdf"
   },
   {
     "type": "peer-reviewed",
@@ -72,7 +74,8 @@
     "doi": "10.1016/j.envint.2023.108017",
     "volume": "177",
     "pages": "108017",
-    "pmid": "37295163"
+    "pmid": "37295163",
+    "pdf": "../assets/pdfs/Jaylet2023.pdf"
   },
   {
     "type": "article",
@@ -119,7 +122,8 @@
     "doi": "10.1016/j.envint.2022.107323",
     "volume": "165",
     "pages": "107323",
-    "pmid": "35660951"
+    "pmid": "35660951",
+    "pdf": "../assets/pdfs/Benoit2022.pdf"
   },
   {
     "type": "patent",

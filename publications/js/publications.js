@@ -62,6 +62,7 @@ function renderPublication(pub) {
   );
 
   li.append(title, meta);
+  if (pub.pdf) li.append(renderPdfButton(pub.pdf, pub.title));
   return li;
 }
 
@@ -125,6 +126,17 @@ async function loadPublications() {
     console.error("Could not load publications:", error);
     container.textContent = "Publications could not be loaded.";
   }
+}
+
+function renderPdfButton(url, title) {
+  const a = document.createElement("a");
+  a.className = "pub__btn pub__btn--pdf";
+  a.href = url;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.setAttribute("aria-label", `PDF: ${title}`);
+  a.textContent = "PDF";
+  return a;
 }
 
 loadPublications();

@@ -57,3 +57,60 @@
     color: var(--type-color);
   }
 }
+
+/* ==========================================================================
+   Buttons (PDF, ...)
+   ========================================================================== */
+.pub__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  padding: 0.1rem 0.55rem 0.1rem 0.4rem;
+  font-size: 0.75em;
+  line-height: 1.5;
+  color: var(--color-muted);
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    scale 0.15s ease;
+}
+
+.pub__btn::before {
+  content: "";
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: var(--btn-color);
+  -webkit-mask: var(--btn-icon) center / contain no-repeat;
+  mask: var(--btn-icon) center / contain no-repeat;
+}
+
+/* PDF variant: icon and highlight colour */
+.pub__btn--pdf {
+  --btn-color: var(--tab-red);
+  --btn-icon: url("/assets/icons/pdf.svg");
+}
+
+/* Subtle highlight on hover / keyboard focus */
+.pub__btn:hover,
+.pub__btn:focus-visible {
+  font-size: 0.75em; /* cancels the global link hover size */
+  font-weight: inherit; /* cancels the global link hover weight */
+  color: var(--btn-color);
+  background-color: color-mix(in srgb, var(--btn-color) 5%, transparent);
+  border-color: var(--btn-color);
+  scale: 1.03;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pub__btn {
+    transition: none;
+  }
+  .pub__btn:hover,
+  .pub__btn:focus-visible {
+    scale: 1;
+  }
+}
