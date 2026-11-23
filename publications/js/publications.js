@@ -70,6 +70,19 @@ function renderPublication(pub) {
   }
   if (pub.pmid) buttons.append(renderPubmedButton(pub.pmid, pub.title));
   if (pub.doi) buttons.append(renderPublisherButton(pub));
+  if (pub.github) {
+    buttons.append(renderLinkButton("github", "GitHub", pub.github, pub.title));
+  }
+  if (pub.pypi) {
+    const pypi = renderLinkButton(
+      "pypi",
+      "PyPI",
+      `https://pypi.org/project/${pub.pypi}/`,
+      pub.title,
+    );
+    pypi.classList.add("pub__btn--logo");
+    buttons.append(pypi);
+  }
   if (buttons.children.length) li.append(buttons);
 
   return li;
@@ -177,6 +190,17 @@ function renderPublisherButton(pub) {
     );
     a.classList.add("pub__btn--logo", `pub__btn--${pub.publisher}`);
   }
+  return a;
+}
+
+function renderLinkButton(variant, label, url, title) {
+  const a = document.createElement("a");
+  a.className = `pub__btn pub__btn--${variant}`;
+  a.href = url;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.setAttribute("aria-label", `${label}: ${title}`);
+  a.textContent = label;
   return a;
 }
 

@@ -151,7 +151,9 @@
     "title": "pybreathe: a python package for respiratory air flow rates analysis",
     "authors": ["Coustillet, T."],
     "venue": "PyPI",
-    "year": 2025
+    "year": 2025,
+    "github": "https://github.com/tcoustillet/pybreathe",
+    "pypi": "pybreathe"
   },
   {
     "type": "post",

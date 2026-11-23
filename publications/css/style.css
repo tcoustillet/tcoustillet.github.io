@@ -114,11 +114,23 @@
   --btn-icon: url("/assets/icons/publisher.svg");
 }
 
-/* Publisher logos keep their own colours */
+/* Logos that keep their own colours (publishers, PyPI) */
 .pub__btn--logo::before {
   background: var(--btn-icon) center / contain no-repeat;
   -webkit-mask: none;
   mask: none;
+}
+
+/* GitHub variant */
+.pub__btn--github {
+  --btn-color: var(--color-strong);
+  --btn-icon: url("/assets/icons/github.svg");
+}
+
+/* PyPI variant */
+.pub__btn--pypi {
+  --btn-color: #3775a9;
+  --btn-icon: url("/assets/icons/pypi.svg");
 }
 
 /* Subtle highlight on hover / keyboard focus */
