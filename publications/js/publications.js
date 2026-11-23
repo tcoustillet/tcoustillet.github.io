@@ -71,7 +71,7 @@ function renderPublication(pub) {
   const buttons = document.createElement("div");
   buttons.className = "pub__links";
   if (pub.pdf) {
-    buttons.append(renderPdfButton(pub.pdf, pub.title));
+    buttons.append(renderPdfButton(pub.pdf, pub.title, pub.pdfLabel));
   }
   if (pub.pmid) buttons.append(renderPubmedButton(pub.pmid, pub.title));
   if (pub.doi) buttons.append(renderPublisherButton(pub));
@@ -157,14 +157,14 @@ async function loadPublications() {
   }
 }
 
-function renderPdfButton(url, title) {
+function renderPdfButton(url, title, label = "PDF") {
   const a = document.createElement("a");
   a.className = "pub__btn pub__btn--pdf";
   a.href = url;
   a.target = "_blank";
   a.rel = "noopener noreferrer";
-  a.setAttribute("aria-label", `PDF: ${title}`);
-  a.textContent = "PDF";
+  a.setAttribute("aria-label", `${label}: ${title}`);
+  a.textContent = label;
   return a;
 }
 
