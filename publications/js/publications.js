@@ -62,7 +62,15 @@ function renderPublication(pub) {
   );
 
   li.append(title, meta);
-  if (pub.pdf) li.append(renderPdfButton(pub.pdf, pub.title));
+
+  const buttons = document.createElement("div");
+  buttons.className = "pub__links";
+  if (pub.pdf) {
+    buttons.append(renderPdfButton(pub.pdf, pub.title));
+  }
+  if (pub.pmid) buttons.append(renderPubmedButton(pub.pmid, pub.title));
+  if (buttons.children.length) li.append(buttons);
+
   return li;
 }
 
@@ -136,6 +144,17 @@ function renderPdfButton(url, title) {
   a.rel = "noopener noreferrer";
   a.setAttribute("aria-label", `PDF: ${title}`);
   a.textContent = "PDF";
+  return a;
+}
+
+function renderPubmedButton(pmid, title) {
+  const a = document.createElement("a");
+  a.className = "pub__btn pub__btn--pubmed";
+  a.href = `https://pubmed.ncbi.nlm.nih.gov/${pmid}/`;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.setAttribute("aria-label", `PubMed: ${title}`);
+  a.textContent = "PubMed";
   return a;
 }
 
