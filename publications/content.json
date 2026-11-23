@@ -1,0 +1,168 @@
+[
+  {
+    "type": "peer-reviewed",
+    "title": "The Cost Outcome Pathway framework: Integrating socio-economic impacts to Adverse Outcome Pathways for supporting policy makers",
+    "authors": [
+      "Coustillet, T.",
+      "Bearth, A.",
+      "Coumoul, X.",
+      "Villégier, A. S.",
+      "Bisson, M.",
+      "Fritsche, E.",
+      "Brignon, J. M.",
+      "Zeman, F.",
+      "Audouze, K."
+    ],
+    "venue": "Toxicology",
+    "year": 2025,
+    "doi": "10.1016/j.tox.2025.154225",
+    "volume": "517",
+    "pages": "154225",
+    "pmid": "40571180"
+  },
+  {
+    "type": "peer-reviewed",
+    "title": "Comprehensive mapping of the AOP-Wiki database: identifying biological and disease gaps",
+    "authors": [
+      "Jaylet, T.",
+      "Coustillet, T.",
+      "Smith, N. M.",
+      "Viviani, B.",
+      "Lindeman, B.",
+      "Vergauwen, L.",
+      "Myhre, O.",
+      "Yarar. N.",
+      "Gostner, J. M.",
+      "Monfort-Lanzas, P.",
+      "Jornod, F.",
+      "Holbech, H.",
+      "Coumoul, X.",
+      "Sarigiannis, D. A.",
+      "Antczak, P.",
+      "Bal-Price, A.",
+      "Fritsche, E.",
+      "Kuchovska, E.",
+      "Stratidakis, A.K.",
+      "Barouki, R.",
+      "Kim, M. J.",
+      "Taboureau, O.",
+      "Wojewodzic, M. W.",
+      "Knapen, D.",
+      "Audouze, K."
+    ],
+    "venue": "Frontiers in toxicology",
+    "year": 2024,
+    "doi": "10.3389/ftox.2024.1285768",
+    "volume": "6",
+    "pages": "1285768",
+    "pmid": "38523647"
+  },
+  {
+    "type": "peer-reviewed",
+    "title": "AOP-helpFinder 2.0: Integration of an event-event searches module",
+    "authors": [
+      "Jaylet, T.",
+      "Coustillet, T.",
+      "Jornod, F.",
+      "Margaritte-Jeannin, P.",
+      "Audouze, K"
+    ],
+    "venue": "Environment international",
+    "year": 2023,
+    "doi": "10.1016/j.envint.2023.108017",
+    "volume": "177",
+    "pages": "108017",
+    "pmid": "37295163"
+  },
+  {
+    "type": "article",
+    "title": "Évaluation des effets sur le neurodéveloppement de l’exposition prénatale et postnatale aux produits phytopharmaceutiques. Présentation du projet NEUROPHYTO",
+    "authors": [
+      "Zeman, F. A.",
+      "Thepaut, E.",
+      "Audouze, K.",
+      "Beranger, R.",
+      "Bisson, M.",
+      "Chevrier, C.",
+      "Coustillet, T.",
+      "Macheka, L.",
+      "Mombelli, E.",
+      "Tebby, C.",
+      "Villegier, A. S.",
+      "Zaros, C.",
+      "Appenzeller, B. M. R."
+    ],
+    "venue": "Environnement, Risques & Santé",
+    "year": 2023,
+    "doi": "10.1684/ers.2023.1744",
+    "volume": "22",
+    "pages": "4",
+    "pmid": ""
+  },
+  {
+    "type": "peer-reviewed",
+    "title": "Adverse outcome pathway from activation of the AhR to breast cancer-related death",
+    "authors": [
+      "Benoit, L.",
+      "Jornod, F.",
+      "Zgheib, E.",
+      "Tomkiewicz, C.",
+      "Koual, M.",
+      "Coustillet, T.",
+      "Barouki, R.",
+      "Audouze, K.",
+      "Vinken, M.",
+      "Coumoul, X."
+    ],
+    "venue": "Environment international",
+    "year": 2022,
+    "doi": "10.1016/j.envint.2022.107323",
+    "volume": "165",
+    "pages": "107323",
+    "pmid": "35660951"
+  },
+  {
+    "type": "patent",
+    "title": "Algostim: An algorithm for intercostal and abdominal neuromuscular electrostimulation based on a mathematical model of instantaneous breathing flow",
+    "authors": ["Coustillet, T.", "Vivodtzev, I."],
+    "venue": "APP registration",
+    "year": "2023",
+    "id": "IDDN.FR.001.350008.000.S.P.2023.000.10000"
+  },
+  {
+    "type": "patent",
+    "title": "Electrical Stimulation of The Respiratory Muscles",
+    "authors": ["Vivodtzev, I.", "Coustillet, T."],
+    "venue": "PCT",
+    "year": "2026",
+    "id": "IB2026/000194"
+  },
+  {
+    "type": "software",
+    "title": "pybreathe: a python package for respiratory air flow rates analysis",
+    "authors": ["Coustillet, T."],
+    "venue": "PyPI",
+    "year": 2025
+  },
+  {
+    "type": "post",
+    "title": "How can artificial intelligence contribute to explaining biological mechanisms by which an environmental chemical may cause health disorders?",
+    "authors": ["Coustillet, T.", "Jaylet, T.", "Audouze, K", "Coumoul, X."],
+    "venue": "Federation of European Biochemical Societies",
+    "year": 2023
+  },
+  {
+    "type": "post",
+    "title": "Co-activation of IP3R and RyR leads to reduced IQ and increased socio-economic burden through non-cholinergic mechanisms",
+    "authors": [
+      "Coustillet, T.",
+      "Coumoul, X.",
+      "Villégier, A. S.",
+      "Bisson, M.",
+      "Zeman, F.",
+      "Audouze, K."
+    ],
+    "venue": "AOP-Wiki",
+    "year": 2025
+  }
+]

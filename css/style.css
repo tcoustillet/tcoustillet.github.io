@@ -36,6 +36,11 @@
   --tab-blue: #1f77b4;
   --tab-orange: #ff7f0e;
   --tab-red: #d62728;
+  --tab-green: #2ca02c;
+  --tab-purple: #9467bd;
+  --tab-olive: #bcbd22;
+
+  --color-strong: #000;
 
   --color-orcid: #a6ce39;
 
@@ -63,6 +68,7 @@
     --color-border: #2c333b;
     --color-bar: #1a222b;
     --color-bar-border: #2a3541;
+    --color-strong: #fff;
     /* Lightened tab:blue to keep sufficient contrast on dark backgrounds */
     --color-accent: color-mix(in srgb, var(--tab-blue) 70%, white);
   }
