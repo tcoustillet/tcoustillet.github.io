@@ -108,6 +108,19 @@
   --btn-icon: url("/assets/icons/pubmed.svg");
 }
 
+/* Publisher variant: same colour as the card's type */
+.pub__btn--publisher {
+  --btn-color: var(--type-color);
+  --btn-icon: url("/assets/icons/publisher.svg");
+}
+
+/* Publisher logos keep their own colours */
+.pub__btn--logo::before {
+  background: var(--btn-icon) center / contain no-repeat;
+  -webkit-mask: none;
+  mask: none;
+}
+
 /* Subtle highlight on hover / keyboard focus */
 .pub__btn:hover,
 .pub__btn:focus-visible {

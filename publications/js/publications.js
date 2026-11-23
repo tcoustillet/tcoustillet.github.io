@@ -69,6 +69,7 @@ function renderPublication(pub) {
     buttons.append(renderPdfButton(pub.pdf, pub.title));
   }
   if (pub.pmid) buttons.append(renderPubmedButton(pub.pmid, pub.title));
+  if (pub.doi) buttons.append(renderPublisherButton(pub));
   if (buttons.children.length) li.append(buttons);
 
   return li;
@@ -155,6 +156,27 @@ function renderPubmedButton(pmid, title) {
   a.rel = "noopener noreferrer";
   a.setAttribute("aria-label", `PubMed: ${title}`);
   a.textContent = "PubMed";
+  return a;
+}
+
+function renderPublisherButton(pub) {
+  const a = document.createElement("a");
+  a.className = "pub__btn pub__btn--publisher";
+  a.href = `https://doi.org/${pub.doi.replace(/^https?:\/\/(dx\.)?doi\.org\//, "")}`;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.setAttribute(
+    "aria-label",
+    `${pub.venue || "Publisher"} page: ${pub.title}`,
+  );
+  a.textContent = pub.venue || "Publisher";
+  if (pub.publisher) {
+    a.style.setProperty(
+      "--btn-icon",
+      `url("/assets/icons/${pub.publisher}.svg")`,
+    );
+    a.classList.add("pub__btn--logo", `pub__btn--${pub.publisher}`);
+  }
   return a;
 }
 
