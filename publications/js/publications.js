@@ -83,6 +83,9 @@ function renderPublication(pub) {
     pypi.classList.add("pub__btn--logo");
     buttons.append(pypi);
   }
+  (pub.buttons ?? []).forEach((btn) => {
+    buttons.append(renderCustomButton(btn, pub.title));
+  });
   if (buttons.children.length) li.append(buttons);
 
   return li;
@@ -196,6 +199,18 @@ function renderPublisherButton(pub) {
 function renderLinkButton(variant, label, url, title) {
   const a = document.createElement("a");
   a.className = `pub__btn pub__btn--${variant}`;
+  a.href = url;
+  a.target = "_blank";
+  a.rel = "noopener noreferrer";
+  a.setAttribute("aria-label", `${label}: ${title}`);
+  a.textContent = label;
+  return a;
+}
+
+function renderCustomButton({ label, url, icon = "link" }, title) {
+  const a = document.createElement("a");
+  a.className = "pub__btn pub__btn--logo pub__btn--custom";
+  a.style.setProperty("--btn-icon", `url("/assets/icons/${icon}.svg")`);
   a.href = url;
   a.target = "_blank";
   a.rel = "noopener noreferrer";

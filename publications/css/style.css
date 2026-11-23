@@ -133,6 +133,11 @@
   --btn-icon: url("/assets/icons/pypi.svg");
 }
 
+/* Custom buttons: text and outline take the card's type colour on hover */
+.pub__btn--custom {
+  --btn-color: var(--type-color);
+}
+
 /* Subtle highlight on hover / keyboard focus */
 .pub__btn:hover,
 .pub__btn:focus-visible {

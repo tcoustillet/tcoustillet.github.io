@@ -160,7 +160,14 @@
     "title": "How can artificial intelligence contribute to explaining biological mechanisms by which an environmental chemical may cause health disorders?",
     "authors": ["Coustillet, T.", "Jaylet, T.", "Audouze, K", "Coumoul, X."],
     "venue": "Federation of European Biochemical Societies",
-    "year": 2023
+    "year": 2023,
+    "buttons": [
+      {
+        "label": "FEBS",
+        "url": "https://network.febs.org/posts/how-can-artificial-intelligence-contribute-to-explaining-biological-mechanisms-by-which-an-environmental-chemical-may-cause-health-disorders",
+        "icon": "febs"
+      }
+    ]
   },
   {
     "type": "post",
@@ -174,6 +181,13 @@
       "Audouze, K."
     ],
     "venue": "AOP-Wiki",
-    "year": 2025
+    "year": 2025,
+    "buttons": [
+      {
+        "label": "AOP-Wiki",
+        "url": "https://aopwiki.org/aops/490",
+        "icon": "aopwiki"
+      }
+    ]
   }
 ]
