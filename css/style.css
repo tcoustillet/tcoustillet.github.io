@@ -42,8 +42,8 @@
   --font-sans: "Ubuntu", system-ui, sans-serif;
 
   --color-bg: #ffffff;
-  --color-text: #1b1f24;
   --color-muted: #5b6570;
+  --color-text: var(--color-muted);
   --color-border: #d8dee4;
   --color-accent: var(--tab-blue);
   --color-bar: #e8eff6;
@@ -58,8 +58,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #14181d;
-    --color-text: #e6e8eb;
     --color-muted: #9aa5b1;
+    --color-text: var(--color-muted);
     --color-border: #2c333b;
     --color-bar: #1a222b;
     --color-bar-border: #2a3541;
@@ -84,6 +84,7 @@ html {
 body {
   margin: 0;
   font-family: var(--font-sans);
+  font-size: 0.9375rem;
   line-height: 1.6;
   background: var(--color-bg);
   color: var(--color-text);
@@ -96,6 +97,13 @@ body {
 
 main a {
   color: var(--color-accent);
+  text-decoration: none;
+}
+
+main a:hover,
+main a:focus-visible {
+  font-weight: 700;
+  font-size: 1.05em;
 }
 
 /* ==========================================================================
@@ -139,6 +147,7 @@ main a {
   margin: 0 0 1rem;
   padding-bottom: 0.35rem;
   border-bottom: 2px solid var(--tab-red);
+  color: black;
 }
 
 /* ==========================================================================
@@ -330,6 +339,10 @@ main a {
    ========================================================================== */
 .bio p {
   margin: 0;
+}
+
+.bio p + p {
+  margin-top: 1em;
 }
 
 /* ==========================================================================
