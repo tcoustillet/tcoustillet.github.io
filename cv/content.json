@@ -146,6 +146,8 @@
           "Statistics for Classification and Data Mining in Genomics",
           "Biological Networks and Systems Biology"
         ],
+        "fold": true,
+        "foldLabel": "Course list",
         "badges": [
           {
             "text": "🎓 Admis, mention Très Bien"
@@ -160,6 +162,8 @@
         "details": [
           {
             "text": "Major in biology",
+            "fold": true,
+            "foldLabel": "Course list",
             "children": [
               "Chemical Structure and Reactivity",
               "History and Philosophy of Science and Technology",
@@ -189,6 +193,8 @@
           },
           {
             "text": "Minor in mathematics",
+            "fold": true,
+            "foldLabel": "Course list",
             "children": [
               "Linear Algebra",
               "Real Analysis",

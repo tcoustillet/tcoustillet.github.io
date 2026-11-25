@@ -110,12 +110,6 @@
   color: color-mix(in srgb, var(--section-color) 80%, black);
 }
 
-@media (prefers-color-scheme: dark) {
-  .cv-item a {
-    color: var(--section-color);
-  }
-}
-
 /* Badges (honours, ...) next to the date pill */
 .cv-badge {
   padding: 0 0.55rem;
@@ -137,7 +131,7 @@
   border-color: var(--gold);
 }
 
-/* Collapsible "Projects" group: folded by default */
+/* Collapsible blocks (Projects group and folded details) */
 .cv-fold {
   --fold-color: var(--section-color);
 }
@@ -184,14 +178,48 @@
   scale: 1.06;
 }
 
-/* Dotted timeline revealed inside the group, with space above it */
+/* Dotted timeline revealed inside the Projects group */
 .cv-list--nested {
   margin-top: 1.25rem;
   border-left-style: dotted;
 }
 
-/* Lighter colour in dark mode (clickable part only) */
+/* Fold button under a title or an entry (fold + foldLabel) */
+.cv-fold--details {
+  margin-top: 0.15rem;
+  margin-bottom: 0.8rem; /* space after the unfolded list */
+}
+
+.cv-fold--details > summary {
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.cv-fold--details > .cv-item__details {
+  margin-top: 0.3rem;
+}
+
+/* Folded details at entry level: same bullet as unfolded level 1 */
+.cv-item > .cv-fold--details > .cv-item__details {
+  list-style: circle;
+}
+
+/* Folded children of a detail: same bullet as unfolded level 2 */
+.cv-item__details > li > .cv-fold--details > .cv-item__details {
+  list-style: disc;
+}
+
+/* No trailing gap after the very last folded block of a list */
+.cv-item__details > li:last-child > .cv-fold--details {
+  margin-bottom: 0;
+}
+
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
+  .cv-item a {
+    color: var(--section-color);
+  }
+
   .cv-fold {
     --fold-color: color-mix(in srgb, var(--section-color) 65%, white);
   }

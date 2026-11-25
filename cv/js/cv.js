@@ -24,6 +24,17 @@ function renderDetails(details) {
     const li = document.createElement("li");
     if (typeof entry === "string") {
       appendRich(li, entry);
+    } else if (entry.fold && entry.children?.length) {
+      appendRich(li, entry.text);
+
+      const fold = document.createElement("details");
+      fold.className = "cv-fold cv-fold--details";
+
+      const summary = document.createElement("summary");
+      summary.textContent = entry.foldLabel ?? "Show";
+
+      fold.append(summary, renderDetails(entry.children));
+      li.append(fold);
     } else {
       appendRich(li, entry.text);
       if (entry.children?.length) li.append(renderDetails(entry.children));
@@ -33,7 +44,15 @@ function renderDetails(details) {
   return ul;
 }
 
-function renderItem({ title, place, period, badges = [], details = [] }) {
+function renderItem({
+  title,
+  place,
+  period,
+  badges = [],
+  details = [],
+  fold,
+  foldLabel,
+}) {
   const li = document.createElement("li");
   li.className = "cv-item";
 
@@ -62,7 +81,20 @@ function renderItem({ title, place, period, badges = [], details = [] }) {
     li.append(where);
   }
 
-  if (details.length) li.append(renderDetails(details));
+  if (details.length) {
+    if (fold) {
+      const wrapper = document.createElement("details");
+      wrapper.className = "cv-fold cv-fold--details";
+
+      const summary = document.createElement("summary");
+      summary.textContent = foldLabel ?? "Show";
+
+      wrapper.append(summary, renderDetails(details));
+      li.append(wrapper);
+    } else {
+      li.append(renderDetails(details));
+    }
+  }
   return li;
 }
 
