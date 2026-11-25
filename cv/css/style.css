@@ -48,7 +48,7 @@
   border-radius: 50%;
 }
 
-/* Title and date pill on the same line */
+/* Title, date pill and badges on the same line */
 .cv-item__head {
   display: flex;
   flex-wrap: wrap;
@@ -79,15 +79,20 @@
   color: var(--color-muted);
 }
 
-/* Details: two levels */
+/* Details: level 1 = hollow circle (everywhere), level 2 = filled disc */
 .cv-item__details {
   margin: 0.4rem 0 0;
   padding-left: 1.1rem;
   font-size: 0.9em;
 }
 
-.cv-item__details .cv-item__details {
+.cv-item > .cv-item__details {
+  list-style: circle;
+}
+
+.cv-item__details > li > .cv-item__details {
   margin-top: 0.15rem;
+  font-size: 1em;
   list-style: disc;
 }
 
@@ -102,21 +107,26 @@
 
 /* Links inside the CV take the colour of their section */
 .cv-item a {
-  color: var(--section-color);
+  color: color-mix(in srgb, var(--section-color) 80%, black);
+}
+
+@media (prefers-color-scheme: dark) {
+  .cv-item a {
+    color: var(--section-color);
+  }
 }
 
 /* Badges (honours, ...) next to the date pill */
 .cv-badge {
-  gap: 0.3rem;
   padding: 0 0.55rem;
   font-size: 0.7em;
+  font-weight: 500;
   line-height: 1.6;
   color: var(--section-color);
   background: color-mix(in srgb, var(--section-color) 14%, transparent);
   border: 1px solid var(--section-color);
   border-radius: 999px;
   white-space: nowrap;
-  font-weight: 500;
 }
 
 /* Gold option: gold border and gold inner fill */
@@ -125,11 +135,75 @@
   color: color-mix(in srgb, var(--gold) 55%, var(--color-strong));
   background: color-mix(in srgb, var(--gold) 22%, transparent);
   border-color: var(--gold);
-  font-weight: 500;
 }
 
+/* Collapsible "Projects" group: folded by default */
+.cv-fold {
+  --fold-color: var(--section-color);
+}
+
+.cv-fold > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--color-strong);
+  cursor: pointer;
+  list-style: none;
+  transform-origin: left center;
+  transition:
+    scale 0.15s ease,
+    color 0.15s ease;
+}
+
+.cv-fold > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron: points right when folded, down when open */
+.cv-fold > summary::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid var(--fold-color);
+  border-bottom: 2px solid var(--fold-color);
+  transform: rotate(-45deg);
+  transition: transform 0.15s ease;
+}
+
+.cv-fold[open] > summary::before {
+  transform: rotate(45deg);
+}
+
+/* Grows slightly on hover / keyboard focus (no layout shift) */
+.cv-fold > summary:hover,
+.cv-fold > summary:focus-visible {
+  color: var(--fold-color);
+  scale: 1.06;
+}
+
+/* Dotted timeline revealed inside the group, with space above it */
+.cv-list--nested {
+  margin-top: 1.25rem;
+  border-left-style: dotted;
+}
+
+/* Lighter colour in dark mode (clickable part only) */
 @media (prefers-color-scheme: dark) {
-  .cv-item a {
-    color: var(--section-color);
+  .cv-fold {
+    --fold-color: color-mix(in srgb, var(--section-color) 65%, white);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cv-fold > summary,
+  .cv-fold > summary::before {
+    transition: none;
+  }
+  .cv-fold > summary:hover,
+  .cv-fold > summary:focus-visible {
+    scale: 1;
   }
 }

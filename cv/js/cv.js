@@ -76,9 +76,21 @@ function renderSection({ label, color, items }) {
   text.textContent = label;
   heading.append(text);
 
+  const hidden = items.filter((item) => item.hide);
+  const nodes = [];
+  let groupAdded = false;
+  items.forEach((item) => {
+    if (!item.hide) {
+      nodes.push(renderItem(item));
+    } else if (!groupAdded) {
+      nodes.push(renderHiddenGroup(hidden));
+      groupAdded = true;
+    }
+  });
+
   const list = document.createElement("ul");
   list.className = "cv-list";
-  list.append(...items.map(renderItem));
+  list.append(...nodes);
 
   section.append(heading, list);
   return section;
@@ -112,6 +124,29 @@ function renderBadge({ text, gold = false }) {
   span.className = gold ? "cv-badge cv-badge--gold" : "cv-badge";
   span.textContent = text;
   return span;
+}
+
+// Wraps all hidden items in one collapsible "Projects" entry.
+function renderHiddenGroup(items) {
+  const li = document.createElement("li");
+  li.className = "cv-item cv-item--group";
+
+  const fold = document.createElement("details");
+  fold.className = "cv-fold";
+
+  const summary = document.createElement("summary");
+  summary.className = "cv-item__title";
+  summary.textContent = `Projects (${items.length})`;
+
+  summary.textContent = `Projects (${items.length})`;
+
+  const inner = document.createElement("ul");
+  inner.className = "cv-list cv-list--nested";
+  inner.append(...items.map(renderItem));
+
+  fold.append(summary, inner);
+  li.append(fold);
+  return li;
 }
 
 loadCv();

@@ -63,7 +63,8 @@
               "Quality Control (QC), filtering, log-normalization, highly variable genes (HVGs), scaling, PCA, k-NN, UMAP, clustering (Leiden), cluster annotation"
             ]
           }
-        ]
+        ],
+        "hide": true
       },
       {
         "title": "Research project",
@@ -74,7 +75,8 @@
             "text": "Modelling the effect of an antibiotic treatment on a population of Pseudomonas aeruginosa",
             "children": ["Pharmacoepidemiological methods and PK/PD modelling"]
           }
-        ]
+        ],
+        "hide": true
       },
       {
         "title": "Research project",
@@ -87,7 +89,8 @@
               "Network inference, Gene Set Enrichment Analysis (GSEA), biological networks"
             ]
           }
-        ]
+        ],
+        "hide": true
       },
       {
         "title": "Research project",
@@ -101,7 +104,8 @@
               "Quality Control (QC), filtering, log-normalization, highly variable genes (HVGs), scaling, PCA, k-NN, UMAP, clustering (Leiden), cluster annotation"
             ]
           }
-        ]
+        ],
+        "hide": true
       },
       {
         "title": "Research project",
@@ -114,7 +118,8 @@
               "SIR(D) model, least squares regression, data–model fitting"
             ]
           }
-        ]
+        ],
+        "hide": true
       }
     ]
   },
