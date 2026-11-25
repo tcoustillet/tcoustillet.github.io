@@ -1,0 +1,141 @@
+/* Projects page styles (loaded after the shared and publications styles) */
+
+#projects-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project {
+  padding: 1.1rem 1.25rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--type-color, var(--color-accent));
+  border-radius: 0.6rem;
+}
+
+.project__title {
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--color-strong);
+}
+
+.project__meta {
+  margin-top: 0.2rem;
+  font-size: 0.9em;
+  color: var(--color-muted);
+}
+
+.project__text {
+  margin: 0.7rem 0 0;
+  font-size: 0.95em;
+}
+
+/* Overview: folded by default, chevron points right then down */
+.project__fold {
+  margin-top: 0.8rem;
+}
+
+.project__fold > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--color-strong);
+  cursor: pointer;
+  list-style: none;
+  transform-origin: left center;
+  transition:
+    scale 0.15s ease,
+    color 0.15s ease;
+}
+
+.project__fold > summary::-webkit-details-marker {
+  display: none;
+}
+
+.project__fold > summary::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid var(--type-color);
+  border-bottom: 2px solid var(--type-color);
+  transform: rotate(-45deg);
+  transition: transform 0.15s ease;
+}
+
+.project__fold[open] > summary::before {
+  transform: rotate(45deg);
+}
+
+.project__fold > summary:hover,
+.project__fold > summary:focus-visible {
+  color: var(--type-color);
+  scale: 1.06;
+}
+
+/* One image per row, caption underneath */
+.project__gallery {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 0.9rem;
+}
+
+.project__gallery figure {
+  margin: 0;
+}
+
+.project__gallery img {
+  display: block;
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  border: 1px solid var(--color-border);
+  border-radius: 0.4rem;
+}
+
+.project__gallery figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85em;
+  color: var(--color-muted);
+}
+
+.project__meta strong {
+  color: color-mix(in srgb, var(--type-color) 80%, black);
+}
+
+.project .pub__links + .project__fold {
+  margin-top: 0.6rem;
+}
+
+/* Custom buttons: icon follows the theme; hover uses the project colour */
+.pub__btn--custom {
+  --icon-color: var(--color-text);
+  --btn-color: var(--type-color);
+}
+
+.pub__btn--custom:not(.pub__btn--logo)::before {
+  background-color: var(--icon-color);
+}
+
+.pub__btn--custom:hover:not(.pub__btn--logo)::before,
+.pub__btn--custom:focus-visible:not(.pub__btn--logo)::before {
+  background-color: var(--btn-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  .project__meta strong {
+    color: var(--type-color);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project__fold > summary,
+  .project__fold > summary::before {
+    transition: none;
+  }
+  .project__fold > summary:hover,
+  .project__fold > summary:focus-visible {
+    scale: 1;
+  }
+}

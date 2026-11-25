@@ -1,0 +1,47 @@
+[
+  {
+    "title": "The p-value, interactively demystified",
+    "color": "var(--tab-blue)",
+    "authors": ["Coustillet, T."],
+    "date": 2026,
+    "description": [
+      "An illustrated, interactive journey through one of the most widely used (and most misunderstood) concepts in biology: the p-value.\n\nYou've heard about the p-value more times than you can count, and always wondered what it's really all about? Your wish is about to come true! This website is made for you. [Join me](https://tcoustillet.github.io/the-pvalue/) on a journey into the world of mathematics to demystify, once and for all, what the famous p-value actually is!"
+    ],
+    "overviewLabel": "Overview",
+    "images": [
+      {
+        "src": "../assets/img/probability_1.png",
+        "alt": "Probability Refresher",
+        "caption": "Probability Refresher — for those who want to start off on the right foot"
+      },
+      {
+        "src": "../assets/img/introduction_2.png",
+        "alt": "Introduction to the p-value",
+        "caption": "Introduction to the p-value — for those who want to understand the fundamentals"
+      },
+      {
+        "src": "../assets/img/examples_3.png",
+        "alt": "The p-value in action",
+        "caption": "The p-value in action — for those who prefer concrete examples"
+      },
+      {
+        "src": "../assets/img/tests_4.png",
+        "alt": "Statistical tests",
+        "caption": "Statistical tests — for those curious about how experimental science actually works"
+      },
+      {
+        "src": "../assets/img/beyond_pval_5.png",
+        "alt": "Beyond the p-value",
+        "caption": "Beyond the p-value — for those who don’t want to get tripped up"
+      }
+    ],
+    "buttons": [
+      {
+        "label": "Read",
+        "url": "https://tcoustillet.github.io/the-pvalue/",
+        "icon": "website"
+      },
+      { "type": "github", "url": "https://github.com/tcoustillet/the-pvalue" }
+    ]
+  }
+]
