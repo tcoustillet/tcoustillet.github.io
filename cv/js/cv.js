@@ -17,6 +17,14 @@ function appendRich(node, text = "") {
   node.append(text.slice(last));
 }
 
+// Returns the entries sorted alphabetically (strings or { text } objects).
+function sortEntries(entries) {
+  const key = (e) => (typeof e === "string" ? e : (e.text ?? ""));
+  return [...entries].sort((a, b) =>
+    key(a).localeCompare(key(b), "en", { sensitivity: "base" }),
+  );
+}
+
 function renderDetails(details) {
   const ul = document.createElement("ul");
   ul.className = "cv-item__details";
@@ -33,11 +41,21 @@ function renderDetails(details) {
       const summary = document.createElement("summary");
       summary.textContent = entry.foldLabel ?? "Show";
 
-      fold.append(summary, renderDetails(entry.children));
+      fold.append(
+        summary,
+        renderDetails(
+          entry.sort ? sortEntries(entry.children) : entry.children,
+        ),
+      );
       li.append(fold);
     } else {
       appendRich(li, entry.text);
-      if (entry.children?.length) li.append(renderDetails(entry.children));
+      if (entry.children?.length)
+        li.append(
+          renderDetails(
+            entry.sort ? sortEntries(entry.children) : entry.children,
+          ),
+        );
     }
     ul.append(li);
   });
@@ -52,6 +70,7 @@ function renderItem({
   details = [],
   fold,
   foldLabel,
+  sort,
 }) {
   const li = document.createElement("li");
   li.className = "cv-item";
@@ -82,6 +101,7 @@ function renderItem({
   }
 
   if (details.length) {
+    const list = sort ? sortEntries(details) : details;
     if (fold) {
       const wrapper = document.createElement("details");
       wrapper.className = "cv-fold cv-fold--details";
@@ -89,10 +109,10 @@ function renderItem({
       const summary = document.createElement("summary");
       summary.textContent = foldLabel ?? "Show";
 
-      wrapper.append(summary, renderDetails(details));
+      wrapper.append(summary, renderDetails(list));
       li.append(wrapper);
     } else {
-      li.append(renderDetails(details));
+      li.append(renderDetails(list));
     }
   }
   return li;

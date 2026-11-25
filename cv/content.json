@@ -148,6 +148,7 @@
         ],
         "fold": true,
         "foldLabel": "Course list",
+        "sort": true,
         "badges": [
           {
             "text": "🎓 Admis, mention Très Bien"
@@ -164,6 +165,7 @@
             "text": "Major in biology",
             "fold": true,
             "foldLabel": "Course list",
+            "sort": true,
             "children": [
               "Chemical Structure and Reactivity",
               "History and Philosophy of Science and Technology",
@@ -195,6 +197,7 @@
             "text": "Minor in mathematics",
             "fold": true,
             "foldLabel": "Course list",
+            "sort": true,
             "children": [
               "Linear Algebra",
               "Real Analysis",
