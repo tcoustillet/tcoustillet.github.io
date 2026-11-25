@@ -235,3 +235,12 @@
     scale: 1;
   }
 }
+
+@media (max-width: 48rem) {
+  .cv-list {
+    padding-left: 1.1rem;
+  }
+  .cv-item::before {
+    left: calc(-1.1rem - 6px);
+  }
+}

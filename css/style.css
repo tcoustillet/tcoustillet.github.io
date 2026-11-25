@@ -356,12 +356,54 @@ main a:focus-visible {
    Responsive: stack sidebar above content on small screens
    ========================================================================== */
 @media (max-width: 48rem) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: min(100% - 1.5rem, 82rem);
+  }
+
+  .layout > main {
+    padding-block: 1.5rem 3rem;
+  }
+
+  /* Menu: one row that scrolls horizontally */
+  .site-header nav {
+    grid-column: 1;
+    min-width: 0;
+  }
+
+  .nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-block: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav li {
+    flex: none;
+  }
+
+  .nav li + li::before {
+    margin-inline: 0.5rem;
+  }
+
+  /* Sidebar stacked above the content */
   .sidebar {
-    --photo-size: 8rem;
+    --photo-size: 7rem;
     position: static;
     max-height: none;
     overflow: visible;
-    padding-block: 1.5rem 1rem;
+    padding-block: 1.25rem 0.5rem;
+  }
+
+  .sidebar__name {
+    font-size: 1.4rem;
   }
 
   .sidebar__role,
@@ -373,4 +415,34 @@ main a:focus-visible {
     width: var(--photo-size);
     margin-inline: auto;
   }
+
+  /* Social links on one row, centred */
+  .social {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.25rem;
+  }
+
+  .social li::before {
+    display: none;
+  }
+
+  .social a {
+    width: auto;
+  }
+}
+
+main {
+  overflow-wrap: anywhere;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
 }

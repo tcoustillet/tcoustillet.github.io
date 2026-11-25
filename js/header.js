@@ -27,3 +27,14 @@ function renderHeader() {
 }
 
 document.querySelector(".site-header").innerHTML = renderHeader();
+
+const current = document.querySelector('.nav a[aria-current="page"]');
+if (current) {
+  // wait for layout so the scroll width is known
+  requestAnimationFrame(() => {
+    const nav = current.closest(".nav");
+    nav.scrollTo({
+      left: current.offsetLeft - (nav.clientWidth - current.offsetWidth) / 2,
+    });
+  });
+}

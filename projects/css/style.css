@@ -139,3 +139,9 @@
     scale: 1;
   }
 }
+
+@media (max-width: 48rem) {
+  .project {
+    padding: 0.9rem 0.9rem 0.7rem;
+  }
+}

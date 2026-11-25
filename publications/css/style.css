@@ -158,3 +158,12 @@
     scale: 1;
   }
 }
+
+@media (max-width: 48rem) {
+  .pub {
+    padding: 0.8rem 0.9rem 0.6rem;
+  }
+  .pub__title {
+    font-size: 1em;
+  }
+}
