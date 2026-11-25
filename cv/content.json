@@ -1,0 +1,206 @@
+[
+  {
+    "id": "experience",
+    "label": "Experience",
+    "color": "var(--tab-blue)",
+    "items": [
+      {
+        "title": "Research engineer, computational neuroscience",
+        "place": "[NeAR](https://www.ibps.sorbonne-universite.fr/en/research/development-adaptations-and-aging/Neural-adaptation-and-repair) team, Dev2A lab, Sorbonne University, Paris, France",
+        "period": "Jan 2024 – Dec 2025",
+        "details": [
+          {
+            "text": "Worked with experimental researchers and clinicians on the analysis of respiratory data from mice, rats, and humans",
+            "children": [
+              "respiratory time-series following spinal cord injury",
+              "plethysmography",
+              "ordinary differential equations (ODE)",
+              "statistics"
+            ]
+          },
+          {
+            "text": "Built interactive dashboards and graphical user interfaces (GUI) usable without programming knowledge",
+            "children": [
+              "Algostim: analysis of respiratory time-series following spinal cord injury",
+              "[S-CaSA](https://github.com/tcoustillet/s-casa): A Standardized method for Calcium Signal Analysis (from neurons)",
+              "[pybreathe](https://github.com/tcoustillet/pybreathe): a python package for respiratory air flow rates analysis"
+            ]
+          },
+          "Co-invented a patent covering a combined hardware and software device"
+        ]
+      },
+      {
+        "title": "Research engineer, computational toxicology",
+        "place": "[SysTox](https://systox.u-paris-sciences.fr) team, HealthFex lab, Paris Cité University, Paris, France",
+        "period": "Nov 2021 – Dec 2023",
+        "details": [
+          {
+            "text": "Co-developed a web-based tool for literature screening",
+            "children": [
+              "[AOP-helpFinder](https://aop-helpfinder.u-paris-sciences.fr): identifying and scoring the links between environmental stressors and biological events"
+            ]
+          },
+          {
+            "text": "Projects",
+            "children": [
+              "[Neurophyto](https://www.ineris.fr/en/ineris/news/evaluation-neurodevelopmental-effects-prenatal-and-postnatal-exposure-plant-protection): assessing the links between environmental exposures, neurodevelopmental disorders, and the socio-economic burden",
+              "[PARC](https://www.eu-parc.eu): new approach methodologies to assess developmental and adult neurotoxicity",
+              "investigating the links between the AhR receptor and breast cancer"
+            ]
+          },
+          "Co-authored four peer-reviewed publications"
+        ]
+      },
+      {
+        "title": "Research project",
+        "place": "self-taught",
+        "period": "2026",
+        "details": [
+          {
+            "text": "Single-cell RNA sequencing data (scRNA-seq) in a breast cancer organoid",
+            "children": [
+              "Identification of cancer cell subpopulations resistant to ferroptosis",
+              "Quality Control (QC), filtering, log-normalization, highly variable genes (HVGs), scaling, PCA, k-NN, UMAP, clustering (Leiden), cluster annotation"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Research project",
+        "place": "Sorbonne University, Paris, France",
+        "period": "2020",
+        "details": [
+          {
+            "text": "Modelling the effect of an antibiotic treatment on a population of Pseudomonas aeruginosa",
+            "children": ["Pharmacoepidemiological methods and PK/PD modelling"]
+          }
+        ]
+      },
+      {
+        "title": "Research project",
+        "place": "Sorbonne University, Paris, France",
+        "period": "2020",
+        "details": [
+          {
+            "text": "Master Regulators for Metastatic behaviour in Osteosarcoma",
+            "children": [
+              "Network inference, Gene Set Enrichment Analysis (GSEA), biological networks"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Research project",
+        "place": "Sorbonne University, Paris, France",
+        "period": "2020",
+        "details": [
+          {
+            "text": "Single-cell RNA sequencing data (scRNA-seq) in tissues collected from Drosophila",
+            "children": [
+              "Identification of genes responsible for a specific stage of development",
+              "Quality Control (QC), filtering, log-normalization, highly variable genes (HVGs), scaling, PCA, k-NN, UMAP, clustering (Leiden), cluster annotation"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Research project",
+        "place": "Sorbonne University, Paris, France",
+        "period": "2020",
+        "details": [
+          {
+            "text": "Modelling the COVID-19 pandemic in Europe using the compartmental SIR model",
+            "children": [
+              "SIR(D) model, least squares regression, data–model fitting"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "education",
+    "label": "Education",
+    "color": "var(--tab-green)",
+    "items": [
+      {
+        "title": "Master's degree in systems biology (bioinformatics)",
+        "place": "Sorbonne University, Paris, France",
+        "period": "2019 – 2021",
+        "details": [
+          "Molecular Mechanisms of Cell Signaling",
+          "Diversity of Model Organism in Physiology",
+          "Cardiovascular Pathophysiology",
+          "Exploring Physiological Functions in Small Animals",
+          "Cancer and the Environment",
+          "Endocrinology",
+          "Respiratory Physiology and Pathophysiology",
+          "Biostatistics",
+          "Advanced Systems Physiology",
+          "Python for Physiological Modelling",
+          "Statistics for Classification and Data Mining in Genomics",
+          "Biological Networks and Systems Biology"
+        ],
+        "badges": [
+          {
+            "text": "🎓 Admis, mention Très Bien"
+          },
+          { "text": "🏆 Major de promotion", "gold": true }
+        ]
+      },
+      {
+        "title": "Bachelor's degree in biology and mathematics",
+        "place": "Université Pierre et Marie Curie (Sorbonne University), Paris, France",
+        "period": "2016 – 2019",
+        "details": [
+          {
+            "text": "Major in biology",
+            "children": [
+              "Chemical Structure and Reactivity",
+              "History and Philosophy of Science and Technology",
+              "Innovation in Public Health",
+              "Energy and the Transformation of Matter",
+              "Earth System Science",
+              "Cellular Organisation of Living Organisms",
+              "Molecular Biology",
+              "Biochemistry",
+              "Genetics",
+              "Functional Organisation of Animals",
+              "Physiology of Neural Signalling",
+              "Physiology of Hormonal Signalling",
+              "Integrative Neurophysiology",
+              "Physiology of Major Functions",
+              "Developmental Biology",
+              "Cellular Biology",
+              "Plant Organisation",
+              "Enzymology",
+              "Microbiology",
+              "Immunology",
+              "Fundamental Ecology and Applications",
+              "Comparative Biology and Animal Evolution",
+              "Statistics for Biology",
+              "Mathematics for Biology"
+            ]
+          },
+          {
+            "text": "Minor in mathematics",
+            "children": [
+              "Linear Algebra",
+              "Real Analysis",
+              "Vector calculus",
+              "Norms and Topology on $\\mathbb{R}^n$",
+              "Ordinary Differential Equations: Analytical Elements and Numerical Analysis",
+              "Elementary Probability Theory",
+              "Functions of Several Variables, Multiple Integrales and Path Integrales",
+              "Sequences of Functions, Function Series and Integrals",
+              "Power series and Fourier Series",
+              "Parametric Integration",
+              "Parametric Equations"
+            ]
+          }
+        ],
+        "badges": [{ "text": "🎓 Admis, mention Assez Bien" }]
+      }
+    ]
+  }
+]
