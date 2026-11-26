@@ -151,9 +151,9 @@
         "sort": true,
         "badges": [
           {
-            "text": "🎓 Admis, mention Très Bien"
+            "text": "🎓 Graduated, with First-Class Honours"
           },
-          { "text": "🏆 Major de promotion", "gold": true }
+          { "text": "🏆 Top of the class", "gold": true }
         ]
       },
       {
@@ -213,7 +213,7 @@
             ]
           }
         ],
-        "badges": [{ "text": "🎓 Admis, mention Assez Bien" }]
+        "badges": [{ "text": "🎓 Graduated, with Honours" }]
       }
     ]
   }
