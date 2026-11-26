@@ -180,8 +180,18 @@
 
 /* Dotted timeline revealed inside the Projects group */
 .cv-list--nested {
+  position: relative;
   margin-top: 1.25rem;
-  border-left-style: dotted;
+  border-left: 2px solid transparent;
+}
+
+.cv-list--nested::before {
+  content: "";
+  position: absolute;
+  top: 0.76rem; /* starts at the first dot */
+  bottom: 0;
+  left: -2px;
+  border-left: 2px dotted var(--section-color);
 }
 
 /* Fold button under a title or an entry (fold + foldLabel) */
@@ -242,5 +252,24 @@
   }
   .cv-item::before {
     left: calc(-1.1rem - 6px);
+  }
+  /* Nested timeline: round dots drawn on a pseudo-element.
+     The real border stays (transparent) so the dots keep the original geometry. */
+  .cv-list--nested {
+    border-left: 2px solid transparent;
+    background: none;
+  }
+
+  .cv-list--nested::before {
+    top: 0.45rem;
+    left: -2px;
+    width: 2px;
+    border-left: 0;
+    background: radial-gradient(
+        circle,
+        var(--section-color) 1px,
+        transparent 1px
+      )
+      0 0 / 2px 5px repeat-y;
   }
 }
