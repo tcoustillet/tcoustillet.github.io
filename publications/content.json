@@ -191,6 +191,20 @@
     ]
   },
   {
+    "type": "post",
+    "title": "[in French] Algostim, la stimulation respiratoire au secours du souffle",
+    "authors": ["Vivodtzev, I.", "Coustillet, T."],
+    "venue": "Sorbonne University",
+    "year": 2026,
+    "buttons": [
+      {
+        "label": "Read",
+        "url": "https://www.sorbonne-universite.fr/actualites/algostim-la-stimulation-respiratoire-au-secours-du-souffle",
+        "icon": "website"
+      }
+    ]
+  },
+  {
     "type": "poster",
     "title": "Neuromuscular electrical stimulation of the respiratory muscles based on breathing modelization in a mouse model of cervical spinal cord injury",
     "authors": [
@@ -265,7 +279,6 @@
     "volume": 399,
     "pages": "S129",
     "year": 2024,
-    "pdf": "https://www.senologie.com/Doc/44d58d2d-e6b7-f6c8-2b2d-635fa2b2925c/",
     "doi": "10.1016/j.toxlet.2024.07.331",
     "pdf": "../assets/pdfs/Midali2024.pdf",
     "pdfLabel": "Abstract"
