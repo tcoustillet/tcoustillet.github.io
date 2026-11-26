@@ -1,0 +1,23 @@
+{
+  "news": {
+    "description": [
+      "I recently completed the [SDCN Academy: Unlock Sweden](https://www.staforum.se/sdcn/sdcn-academy/) in Stockholm, a five-week programme for internationally mobile professionals who moved to Sweden alongside a partner working at one of the city's universities or companies. Our cohort brought together people from 16 countries across 5 continents, with backgrounds spanning research, engineering, tech, healthcare, data, design, HR and project management.",
+      "Over these five weeks, we explored what our next chapter in Stockholm could look like: recognising the value of our professional experience, understanding a new labour market and discovering future possibilities. Along the way, introductions quickly turned into conversations, shared advice and plans to meet beyond the programme. Read the full posts [here](https://lnkd.in/p/drd-jQSc) and [here](https://lnkd.in/p/d52fdp9Z).",
+      "Thank you to the SDCN team, I look forward to pursuing my adventure in Sweden! 🇸🇪"
+    ],
+    "photos": [
+      {
+        "src": "/assets/img/news/sdcn_1.jpeg",
+        "alt": "Day 1 of the programme - SDCN Academy:Unlock Sweden!"
+      },
+      {
+        "src": "/assets/img/news/sdcn_2.jpeg",
+        "alt": "Last day 🥲: graduation ceremony"
+      },
+      {
+        "src": "/assets/img/news/sdcn_3.jpeg",
+        "alt": "Celebration with the crew"
+      }
+    ]
+  }
+}

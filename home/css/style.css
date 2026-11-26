@@ -1,0 +1,110 @@
+/* Home page styles (loaded after /css/style.css) */
+
+.news {
+  margin-top: 2.5rem;
+}
+
+.news p {
+  margin: 0 0 1rem;
+}
+
+/* Auto-scrolling carousel */
+.carousel {
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.carousel__track {
+  display: flex;
+  width: max-content;
+  animation: carousel-scroll var(--duration, 30s) linear infinite;
+}
+
+/* Pause on hover and when something inside has keyboard focus */
+.carousel:hover .carousel__track,
+.carousel:has(:focus-visible) .carousel__track {
+  animation-play-state: paused;
+}
+
+.carousel__item {
+  flex: none;
+  padding-right: 0.75rem; /* spacing as padding, so -50% is an exact loop */
+}
+
+.carousel__item img {
+  display: block;
+  height: 12rem;
+  width: auto;
+  max-width: none;
+  border: 1px solid var(--color-border);
+  border-radius: 0.4rem;
+}
+
+@keyframes carousel-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Reduced motion: no animation, a normal swipeable row, no duplicates */
+@media (prefers-reduced-motion: reduce) {
+  .carousel {
+    overflow-x: auto;
+  }
+  .carousel__track {
+    animation: none;
+  }
+  .carousel__item[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+@media (max-width: 48rem) {
+  .carousel__item img {
+    height: 9rem;
+  }
+}
+
+/* Full-size photo viewer */
+.carousel__item {
+  cursor: zoom-in;
+}
+
+.lightbox {
+  max-width: min(94vw, 70rem);
+  max-height: 94vh;
+  padding: 0;
+  color: #fff;
+  background: transparent;
+  border: none;
+}
+
+.lightbox::backdrop {
+  background: rgb(0 0 0 / 0.85);
+}
+
+.lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  margin: 0 auto;
+  border-radius: 0.4rem;
+}
+
+.lightbox__caption {
+  margin: 0.6rem 0 0;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
