@@ -112,12 +112,14 @@
 
 /* Badges (honours, ...) next to the date pill */
 .cv-badge {
+  --badge-color: var(--section-color);
+  --badge-tint: color-mix(in srgb, var(--section-color) 14%, transparent);
   padding: 0 0.55rem;
   font-size: 0.7em;
   font-weight: 500;
   line-height: 1.6;
-  color: var(--section-color);
-  background: color-mix(in srgb, var(--section-color) 14%, transparent);
+  color: var(--badge-color);
+  background: var(--badge-tint);
   border: 1px solid var(--section-color);
   border-radius: 999px;
   white-space: nowrap;
@@ -126,8 +128,59 @@
 /* Gold option: gold border and gold inner fill */
 .cv-badge--gold {
   --gold: #d4a017;
-  color: color-mix(in srgb, var(--gold) 55%, var(--color-strong));
-  background: color-mix(in srgb, var(--gold) 22%, transparent);
+  --badge-color: color-mix(in srgb, var(--gold) 55%, var(--color-strong));
+  --badge-tint: color-mix(in srgb, var(--gold) 22%, transparent);
+  border-color: var(--gold);
+}
+
+/* Floating tooltip on badges that have one */
+.cv-badge--tip {
+  position: relative;
+  cursor: help;
+}
+
+.cv-badge--tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.5rem);
+  z-index: 20;
+  padding: 0 0.65rem;
+  font-size: 1.1em;
+  font-weight: 500;
+  line-height: 1.6;
+  white-space: nowrap;
+  color: var(--badge-color);
+  /* opaque: page background first, then the badge tint on top */
+  background:
+    linear-gradient(var(--badge-tint), var(--badge-tint)), var(--color-bg);
+  border: 1px solid var(--badge-color);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.15);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 4px);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+/* Keyboard focus and tap (is-open, set by cv.js) */
+.cv-badge--tip:focus-visible::after,
+.cv-badge--tip.is-open::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Hover only on devices that really have it (avoids sticky hover on phones) */
+@media (hover: hover) {
+  .cv-badge--tip:hover::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.cv-badge--gold.cv-badge--tip::after {
   border-color: var(--gold);
 }
 
@@ -178,7 +231,9 @@
   scale: 1.06;
 }
 
-/* Dotted timeline revealed inside the Projects group */
+/* Dotted timeline revealed inside the Projects group.
+   The real border stays (transparent) so the geometry matches the main timeline;
+   the dotted line is drawn on a pseudo-element. */
 .cv-list--nested {
   position: relative;
   margin-top: 1.25rem;
@@ -188,7 +243,7 @@
 .cv-list--nested::before {
   content: "";
   position: absolute;
-  top: 0.76rem; /* starts at the first dot */
+  top: 0.76rem; /* starts at the centre of the first dot */
   bottom: 0;
   left: -2px;
   border-left: 2px dotted var(--section-color);
@@ -236,6 +291,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .cv-badge--tip::after,
   .cv-fold > summary,
   .cv-fold > summary::before {
     transition: none;
@@ -246,22 +302,18 @@
   }
 }
 
+/* Mobile */
 @media (max-width: 48rem) {
   .cv-list {
     padding-left: 1.1rem;
   }
+
   .cv-item::before {
     left: calc(-1.1rem - 6px);
   }
-  /* Nested timeline: round dots drawn on a pseudo-element.
-     The real border stays (transparent) so the dots keep the original geometry. */
-  .cv-list--nested {
-    border-left: 2px solid transparent;
-    background: none;
-  }
 
+  /* Nested timeline: round dots, since dotted borders render poorly on phones */
   .cv-list--nested::before {
-    top: 0.45rem;
     left: -2px;
     width: 2px;
     border-left: 0;
@@ -271,5 +323,19 @@
         transparent 1px
       )
       0 0 / 2px 5px repeat-y;
+  }
+
+  /* Tooltips: wrap and stay inside the screen */
+  .cv-badge--tip::after {
+    left: 0;
+    width: max-content;
+    max-width: 14rem;
+    white-space: normal;
+    transform: translate(0, 4px);
+  }
+
+  .cv-badge--tip:focus-visible::after,
+  .cv-badge--tip.is-open::after {
+    transform: translate(0, 0);
   }
 }

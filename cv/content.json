@@ -151,9 +151,14 @@
         "sort": true,
         "badges": [
           {
-            "text": "🎓 Graduated, with First-Class Honours"
+            "text": "🎓 Graduated, with First-Class Honours",
+            "tooltip": "🎓 Admis, Mention Très Bien · 16+/20"
           },
-          { "text": "🏆 Top of the class", "gold": true }
+          {
+            "text": "🏆 Top of the class",
+            "gold": true,
+            "tooltip": "🏆 Major de Promotion"
+          }
         ]
       },
       {
@@ -213,7 +218,12 @@
             ]
           }
         ],
-        "badges": [{ "text": "🎓 Graduated, with Honours" }]
+        "badges": [
+          {
+            "text": "🎓 Graduated, with Honours",
+            "tooltip": "🎓 Admis, Mention Assez Bien · 12+/20"
+          }
+        ]
       }
     ]
   }

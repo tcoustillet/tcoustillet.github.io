@@ -171,10 +171,16 @@ async function loadCv() {
   }
 }
 
-function renderBadge({ text, gold = false }) {
+function renderBadge({ text, gold = false, tooltip }) {
   const span = document.createElement("span");
   span.className = gold ? "cv-badge cv-badge--gold" : "cv-badge";
   span.textContent = text;
+  if (tooltip) {
+    span.classList.add("cv-badge--tip");
+    span.dataset.tip = tooltip;
+    span.tabIndex = 0;
+    span.setAttribute("aria-label", `${text}: ${tooltip}`);
+  }
   return span;
 }
 
@@ -200,5 +206,14 @@ function renderHiddenGroup(items) {
   li.append(fold);
   return li;
 }
+
+// Touch devices: one tap shows the tooltip, tapping elsewhere hides it.
+document.addEventListener("click", (e) => {
+  const badge = e.target.closest(".cv-badge--tip");
+  document.querySelectorAll(".cv-badge--tip.is-open").forEach((b) => {
+    if (b !== badge) b.classList.remove("is-open");
+  });
+  if (badge) badge.classList.toggle("is-open");
+});
 
 loadCv();
